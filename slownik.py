@@ -12,6 +12,53 @@ przydechy = {'ἑ': 'he', 'ὃ': 'ho', 'ἡ': 'he', 'ὁ': 'ho', 'ὕ': 'hy', '�
              'ὧ': 'ho', 'ὅ': 'ho', 'ὑ': 'he', 'ἥ': 'he', 'ᾗ': 'he', 'ἃ': 'ha', 'ὥ': 'ho', 'ὗ': 'hy',
              'ἵ': 'hi', 'ἧ': 'he', 'ἷ': 'hi'}
 
+dyftongi = {'αι,': 'aj',
+ 'αἰ,': 'aj',
+ 'αἱ,': 'haj',
+ 'αἴ,': 'aj',
+ 'αἵ,': 'haj',
+ 'αἶ,': 'aj',
+ 'αἷ,': 'haj',
+ 'αὐ,': 'au',
+ 'αὑ,': 'hau',
+ 'αὔ,': 'au',
+ 'αὕ,': 'hau',
+ 'αὖ,': 'au',
+ 'αὗ,': 'hau',
+ 'εἰ,': 'ej',
+ 'εἱ,': 'hej',
+ 'εἴ,': 'ej',
+ 'εἵ,': 'hej',
+ 'εἶ,': 'ej',
+ 'εἷ,': 'hej',
+ 'εὐ,': 'eu',
+ 'εὑ,': 'heu',
+ 'εὔ,': 'eu',
+ 'εὕ,': 'heu',
+ 'εὖ,': 'eu',
+ 'εὗ,': 'heu',
+ 'ηὐ,': 'eu',
+ 'ηὑ,': 'heu',
+ 'ηὖ,': 'eu',
+ 'ηὗ,': 'heu',
+ 'οι,': 'oj',
+ 'ου,': 'u',
+ 'οἰ,': 'oj',
+ 'οἱ,': 'hoj',
+ 'οἴ,': 'oj',
+ 'οἵ,': 'hoj',
+ 'οἶ,': 'oj',
+ 'οὔ,': 'u',
+ 'οὕ,': 'hu',
+ 'οὖ,': 'u',
+ 'οὗ,': 'hu',
+ 'οὺ,': 'u',
+ 'οῖ,': 'oj',
+ 'υἰ,': 'yj',
+ 'υἵ,': 'hyj',
+ 'υἷ,': 'hyj',
+ 'υῖ,': 'yj'}
+
 def dicmaker(file):
     #txt file should contain pairs of letters (words) in every line divided by comma
     # file is a name of a txt file which has to be in the same category and inserted as a str
@@ -24,4 +71,4 @@ def dicmaker(file):
 
     return newdic
 
-dyftongi = dicmaker('dyft')
+#dyftongi = dicmaker('dyft')
