@@ -1,0 +1,1 @@
+labelfont = ('times', 20, 'bold')
