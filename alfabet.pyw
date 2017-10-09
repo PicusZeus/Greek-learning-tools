@@ -1,18 +1,12 @@
 
 
-import os, time
-
-
-
+import os
 from tkinter import *
 from tkinter.messagebox import askyesno, showinfo
 from tkinter.colorchooser import askcolor
 import random
 
-
-
-from fonty import *
-from slownik import podstawowy, przydechy, dyftongi
+from slownik import podstawowy, przydechy, dyftongi, transwords
 
 
 
@@ -128,6 +122,7 @@ class Alfabet(Frame):
         self.pytanie1 = 'Ile słów chcesz przećwiczyć?'
         self.labPyt.config(text=self.pytanie1)
         self.what= 'słowo'
+        self.slownik = transwords
     def onZdania(self):
         self.pytanie1 = 'Ile zdań chcesz przećwiczyć?'
         self.labPyt.config(text=self.pytanie1)
@@ -227,7 +222,7 @@ class Alfabet(Frame):
         Rama2 = Frame(self.mainframe)
         Rama2.pack(fill = X, expand=YES)
         self.prob = 0
-        info = Label(Rama2, bg='AntiqueWhite2', height= 2, text='Do dzieła!', font=('arial', 35, 'bold'))
+        info = Label(Rama2, bg='AntiqueWhite2', height= 2, text='Do dzieła!', font=('arial', 25, 'bold'))
         info.pack(fill= X, expand=YES)
         self.info = info
         scoring = Label(Rama2, text='Udało mi się 0 razy na %s prób.' %(self.prob), font=('Times', 20, 'italic'), bg='cyan2')
@@ -250,11 +245,11 @@ class Alfabet(Frame):
                 self.score += 1
                 print(self.prob)
                 self.scoring.config(text='Udało mi się %s razy na %s prób.' %(self.score, self.prob))
-                self.info.config(text='Brawo!!!')
+                self.info.config(text='Brawo!!!\n %s = %s' %(inp, orig))
 
             else:
                 print('no')
-                self.info.config(text='Niestety, poprawna odpowiedź to: %s' %(str(self.slownik[orig])))
+                self.info.config(text='Niestety, poprawna odpowiedź to\n: %s = %s' %(orig, str(self.slownik[orig])))
                 self.scoring.config(text='Udało mi się %s razy na %s prób.' % (self.score, self.prob))
 
 
@@ -301,7 +296,7 @@ class Alfabet(Frame):
         
         
         
-        os.popen(__file__)
+        os.popen('alfabet.exe')
 
         self.quit()
 
