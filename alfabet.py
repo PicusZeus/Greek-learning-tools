@@ -1,7 +1,7 @@
 
 import os, time
 from tkinter import *
-from tkinter.messagebox import askyesno
+from tkinter.messagebox import askyesno, showinfo
 from tkinter.colorchooser import askcolor
 import random
 from PIL import Image, ImageTk
@@ -302,4 +302,4 @@ class Alfabet(Frame):
 
 if __name__ == '__main__':
     Alfabet().mainloop()
-
+a = input("prompt: ")
