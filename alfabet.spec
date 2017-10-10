@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['alfabet.py'],
+a = Analysis(['alfabet.pyw'],
              pathex=['/home/picus/Desktop/code/Greka'],
              binaries=[],
              datas=[],

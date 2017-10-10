@@ -123,6 +123,8 @@ class Alfabet(Frame):
         self.labPyt.config(text=self.pytanie1)
         self.what= 'słowo'
         self.slownik = transwords
+
+
     def onZdania(self):
         self.pytanie1 = 'Ile zdań chcesz przećwiczyć?'
         self.labPyt.config(text=self.pytanie1)
@@ -132,20 +134,26 @@ class Alfabet(Frame):
         self.labPyt.config(text=self.pytanie1)
         self.slownik = podstawowy
         self.what = 'literę'
+        self.onPrzydechy()
+        self.onDyftongi()
     def onPrzydechy(self):
-        if self.opts[0].get() == 1:
-#            print(self.opts[0].get())
-            self.slownik = {**self.slownik, **przydechy}
-        else:
-            self.slownik = {k: v for k, v in self.slownik.items() if k not in przydechy}
-#        print(self.slownik)
+        if self.var1.get() == 'Litery':
+            if self.opts[0].get() == 1:
+#                print(self.opts[0].get())
+                self.slownik = {**self.slownik, **przydechy}
+            else:
+               self.slownik = {k: v for k, v in self.slownik.items() if k not in przydechy}
+#           print(self.slownik)
 
     def onDyftongi(self):
-        if self.opts[1].get() == 1:
-            self.slownik = {**self.slownik, **dyftongi}
-        else:
-            self.slownik = {k: v for k, v in self.slownik.items() if k not in dyftongi}
-#        print(self.slownik)
+        print('sprawdzam')
+        if self.var1.get() == 'Litery':
+            if self.opts[1].get() == 1:
+                self.slownik = {**self.slownik, **dyftongi}
+                print(self.slownik)
+            else:
+                self.slownik = {k: v for k, v in self.slownik.items() if k not in dyftongi}
+#            print(self.slownik)
 
     def onNumber(self, number):
 
@@ -234,10 +242,8 @@ class Alfabet(Frame):
     def onfetch(self):
         self.prob = self.prob + 1
 
-
         if self.numtry > 0:
-
-            inp = self.ent.get()
+            inp = self.ent.get().lower()
             orig = self.letter
 
             if inp in self.slownik[orig] and inp != '':
@@ -258,13 +264,9 @@ class Alfabet(Frame):
                 self.plak.config(text=self.letter)
                 self.numtry = self.numtry - 1
                 self.ent.delete(0, END)
-
             else:
-                
-
                 win = Toplevel()
                 you =''
-                
                 
                 if self.score / self.allnumtry >= 0.9:
                     you = 'sowa.gif'
@@ -275,7 +277,7 @@ class Alfabet(Frame):
                 endimg = PhotoImage(file=imgfolder + you)
                 
                 self.endimg=endimg
-                
+                self.mainframe.pack_forget()
                 can = Canvas(win)
                 can.pack(fill=BOTH)
                 
